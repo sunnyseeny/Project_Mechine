@@ -25,8 +25,10 @@ void setup() {
 }
 
 void loop() {
+  
   // put your main code here, to run repeatedly:
   if (BT.available()) {
+    
     char Rxapp = BT.read();
     if(Rxapp=='F'){
       forward();
@@ -40,25 +42,25 @@ void loop() {
     else if(Rxapp =='R'){
       right();
     }
-    else if(Rxapp =="FL"){
+    else if(Rxapp =='Z'){
       QL();
     }
-    else if(Rxapp =="BL"){
+    else if(Rxapp =='C'){
       BER();
     }
-    else if(Rxapp =="FR"){
+    else if(Rxapp =='X'){
       ER();
     }
-    else if(Rxapp =="BR"){
+    else if(Rxapp =='V'){
       BQL();
     }
-    else if(Rxapp =="SPR"){
+    else if(Rxapp =='S'){
       CW();
     }
-    else if(Rxapp =="SPL"){
+    else if(Rxapp =='A'){
       CCW();
     }
-    else{
+    else if(Rxapp =='P'){
       stopp();
     }
   }

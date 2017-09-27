@@ -1,7 +1,7 @@
 void forward() {
   //Motor1 CCW
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(ENA, PWMA);
 
   //Motor2 CW
@@ -12,13 +12,13 @@ void forward() {
   //Motor3 stop
   digitalWrite(IN5, LOW);
   digitalWrite(IN6, LOW);
-  analogWrite(ENA, 0);
+  analogWrite(ENC, 0);
 }
 
 void backward() {
   //Motor1 CW
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(ENA, PWMA);
 
   //Motor2 CCW
@@ -34,8 +34,8 @@ void backward() {
 
 void QL() {
   //Motor1 CCW
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(ENA, PWMA);
 
   //Motor2 stop
@@ -60,16 +60,16 @@ void ER() {
   digitalWrite(IN4, LOW);
   analogWrite(ENB, PWMB);
 
-  //Motor3 CCW
-  digitalWrite(IN5, HIGH);
-  digitalWrite(IN6, LOW);
+  //Motor3 CW
+  digitalWrite(IN5, LOW);
+  digitalWrite(IN6, HIGH);
   analogWrite(ENC, PWMC);
 }
 
 void BQL() {
   //Motor1 CW
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(ENA, PWMA);
 
   //Motor2 stop
@@ -94,22 +94,22 @@ void BER() {
   digitalWrite(IN4, HIGH);
   analogWrite(ENB, PWMB);
 
-  //Motor3 CW
-  digitalWrite(IN5, LOW);
-  digitalWrite(IN6, HIGH);
+  //Motor3 CCW
+  digitalWrite(IN5, HIGH);
+  digitalWrite(IN6, LOW);
   analogWrite(ENC, PWMC);
 }
 
 void left() {
   //Motor1 CCW
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(ENA, PWMA);
 
   //Motor2 CCW/slow
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
-  analogWrite(ENB, PWMB / 2);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENB, 102);
 
   //Motor3 CW
   digitalWrite(IN5, HIGH);
@@ -119,9 +119,9 @@ void left() {
 
 void right() {
   //Motor1 CCW/slow
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  analogWrite(ENA, PWMA / 2);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, 102);
 
   //Motor2 CW
   digitalWrite(IN3, HIGH);
@@ -136,35 +136,35 @@ void right() {
 
 void CW() {
   //Motor1 CW
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(ENA, PWMA);
 
   //Motor2 CW
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
   analogWrite(ENB, PWMB);
 
   //Motor3 CW
-  digitalWrite(IN5, HIGH);
-  digitalWrite(IN6, LOW);
+  digitalWrite(IN5, LOW);
+  digitalWrite(IN6, HIGH);
   analogWrite(ENC, PWMC);
 }
 
 void CCW() {
   //Motor1 CCW
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(ENA, PWMA);
 
   //Motor2 CCW
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
   analogWrite(ENB, PWMB);
 
   //Motor3 CCW
-  digitalWrite(IN5, LOW);
-  digitalWrite(IN6, HIGH);
+  digitalWrite(IN5, HIGH);
+  digitalWrite(IN6, LOW);
   analogWrite(ENC, PWMC);
 }
 
