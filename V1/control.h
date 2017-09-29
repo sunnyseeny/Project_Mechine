@@ -100,39 +100,6 @@ void BER() {
   analogWrite(ENC, PWMC);
 }
 
-void left() {
-  //Motor1 CCW
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, PWMA);
-
-  //Motor2 CCW/slow
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENB, 102);
-
-  //Motor3 CW
-  digitalWrite(IN5, HIGH);
-  digitalWrite(IN6, LOW);
-  analogWrite(ENC, PWMC);
-}
-
-void right() {
-  //Motor1 CCW/slow
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, 102);
-
-  //Motor2 CW
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENB, PWMB);
-
-  //Motor3 CCW
-  digitalWrite(IN5, LOW);
-  digitalWrite(IN6, HIGH);
-  analogWrite(ENC, PWMC);
-}
 
 void CW() {
   //Motor1 CW
