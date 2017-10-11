@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 SoftwareSerial BT(10, 11); //Rx,Tx
-unsigned int num[4] = {0, 0, 0, 0};
+byte num[4] = {0, 0, 0, 0};
 void setup() {
   Serial.begin(9600);
   Serial.println("start");
@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  static unsigned int cnt = 0;
+  static byte cnt = 0;
   if (BT.available()) {
     int x = BT.read();
     if (x >= 14) {
@@ -20,17 +20,17 @@ void loop() {
     }
     if (x == 11) {
       if (cnt == 3) {
-        unsigned int rpml = num[0] * 100 + num[1] * 10 + num[2];
+        byte rpml = num[0] * 100 + num[1] * 10 + num[2];
         Serial.print("rpml= ");
         Serial.println(rpml);
       }
       if (cnt == 2) {
-        unsigned int rpml = num[0] * 10 + num[1];
+        byte rpml = num[0] * 10 + num[1];
         Serial.print("rpml= ");
         Serial.println(rpml);
       }
       if (cnt == 1) {
-        unsigned int rpml = num[0];
+        byte rpml = num[0];
         Serial.print("rpml= ");
         Serial.println(rpml);
       }
@@ -39,17 +39,17 @@ void loop() {
     }
     else if (x == 12) {
       if (cnt == 3) {
-        unsigned int rpmr = num[0] * 100 + num[1] * 10 + num[2];
+        byte rpmr = num[0] * 100 + num[1] * 10 + num[2];
         Serial.print("rpmr= ");
         Serial.println(rpmr);
       }
       if (cnt == 2) {
-        unsigned int rpmr = num[0] * 10 + num[1];
+        byte rpmr = num[0] * 10 + num[1];
         Serial.print("rpmr= ");
         Serial.println(rpmr);
       }
       if (cnt == 1) {
-        unsigned int rpmr = num[0];
+        byte rpmr = num[0];
         Serial.print("rpml= ");
         Serial.println(rpmr);
       }
