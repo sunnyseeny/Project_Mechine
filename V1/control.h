@@ -1,3 +1,7 @@
+#include "motorpin.h"
+
+byte rpm_l = 0, rpm_r = 0;
+
 void forward() {
   //Motor1 CCW
   digitalWrite(IN1, LOW);
@@ -167,4 +171,39 @@ void Brk() {
   digitalWrite(IN5, HIGH);
   digitalWrite(IN6, HIGH);
   analogWrite(ENC, 0);
+}
+
+
+void left() {
+  //Motor1 CCW
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, PWMA);
+
+  //Motor2 CCW/slow
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENB, rpm_l);
+
+  //Motor3 CW
+  digitalWrite(IN5, HIGH);
+  digitalWrite(IN6, LOW);
+  analogWrite(ENC, PWMC);
+}
+
+void right() {
+  //Motor1 CCW/slow
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, rpm_r);
+
+  //Motor2 CW
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENB, PWMB);
+
+  //Motor3 CCW
+  digitalWrite(IN5, LOW);
+  digitalWrite(IN6, HIGH);
+  analogWrite(ENC, PWMC);
 }
